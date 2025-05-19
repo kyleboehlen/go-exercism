@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+      - TOKEN=${TOKEN}
+    container_name: go-exercism
+    env_file:
+      - ./.env
+    volumes:
+      - ./exercises:/root/exercism/go
+    tty: true
+    stdin_open: true
